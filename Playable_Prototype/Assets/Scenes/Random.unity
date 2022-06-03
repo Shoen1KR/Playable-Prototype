@@ -32733,8 +32733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9dd32a8d35de34cb9920e80a8daae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  spawns: []
   distance: 5
 --- !u!114 &1595368913
 MonoBehaviour:
@@ -32748,8 +32746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dafb3100320f9044a0127c2829459ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  spawns: []
 --- !u!4 &1595368914
 Transform:
   m_ObjectHideFlags: 0

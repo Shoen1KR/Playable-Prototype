@@ -830,7 +830,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1045770417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78bafe42f7e9834b824c30a5698f547, type: 3}
+  m_Script: {fileID: 11500000, guid: 3317b8267a215894ea7f32e0d13cbfab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1045770420
@@ -878,7 +878,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1045770419}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_TargetAssemblyTypeName: LineOSight, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
