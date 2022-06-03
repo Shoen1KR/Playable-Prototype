@@ -11,6 +11,10 @@ public class Spawning : MonoBehaviour
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         spawns = GameObject.FindGameObjectsWithTag("SpawnPoint");
+        foreach (var player in players)
+        {
+            Spawn(player);
+        }
     }
 
     // Start is called before the first frame update
