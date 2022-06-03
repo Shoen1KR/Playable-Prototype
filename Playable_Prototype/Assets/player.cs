@@ -41,7 +41,7 @@ public class player : MonoBehaviour
         if (t2 > timeToDie && isDieing == false)
         {
             isDieing = true;
-            t2 = 0;
+            t2 = Random.Range(0.0f, 4.0f);
             die();
         }
     }
@@ -58,12 +58,12 @@ public class player : MonoBehaviour
     IEnumerator dieing()
     {
         Color OGColor = playerObj.GetComponent<MeshRenderer>().material.color;
-        Tween myTween = playerObj.transform.DOMoveY(-1.2f, 2).SetRelative().SetEase(Ease.OutQuad);
-        playerObj.GetComponent<MeshRenderer>().material.DOColor(Color.black,2);
+        Tween myTween = playerObj.transform.DOScale(Vector3.zero, 1).SetEase(Ease.OutQuad);
+        playerObj.GetComponent<MeshRenderer>().material.DOColor(Color.black,0.5f);
         playerObj.GetComponent<Collider>().enabled = false;
         playerObj.GetComponent<AIPath>().enabled = false;
         yield return myTween.WaitForCompletion();
-        playerObj.transform.position = new Vector3(playerObj.transform.position.x,1,playerObj.transform.position.z);
+        playerObj.transform.localScale = Vector3.one *0.5f;
         playerObj.GetComponent<Collider>().enabled = true;
         playerObj.GetComponent<AIPath>().enabled = true;
         playerObj.GetComponent<MeshRenderer>().material.color = OGColor;
@@ -71,5 +71,6 @@ public class player : MonoBehaviour
         playerObj.transform.rotation = Quaternion.Euler(0,0,0);
         isDieing = false;
         spawnManager.Spawn(playerObj);
+        yield return new WaitForEndOfFrame();
     }
 }
