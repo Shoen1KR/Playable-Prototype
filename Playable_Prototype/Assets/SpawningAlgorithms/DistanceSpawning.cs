@@ -30,7 +30,7 @@ public class DistanceSpawning : MonoBehaviour
         
     }
 
-    public void Spawn(GameObject player)
+    public Vector3 Spawn(GameObject player)
     {
         Debug.Log("-1-12-12-12-12-12-12-12-");
         Debug.Log(player.transform.position);
@@ -47,7 +47,7 @@ public class DistanceSpawning : MonoBehaviour
             }
         }
 
-        player.transform.position = filtered[Random.Range(0, filtered.Count)].transform.position;
+        return filtered[Random.Range(0, filtered.Count)].transform.position;
         Debug.Log(player.transform.position);
     }
 }
