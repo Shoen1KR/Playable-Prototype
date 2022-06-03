@@ -57,13 +57,16 @@ public class player : MonoBehaviour
     }
     IEnumerator dieing()
     {
+        Color OGColor = playerObj.GetComponent<MeshRenderer>().material.color;
         Tween myTween = playerObj.transform.DOMoveY(-1.2f, 2).SetRelative().SetEase(Ease.OutQuad);
+        playerObj.GetComponent<MeshRenderer>().material.DOColor(Color.black,2);
         playerObj.GetComponent<Collider>().enabled = false;
         playerObj.GetComponent<AIPath>().enabled = false;
         yield return myTween.WaitForCompletion();
         playerObj.transform.position = new Vector3(playerObj.transform.position.x,1,playerObj.transform.position.z);
         playerObj.GetComponent<Collider>().enabled = true;
         playerObj.GetComponent<AIPath>().enabled = true;
+        playerObj.GetComponent<MeshRenderer>().material.color = OGColor;
 
         playerObj.transform.rotation = Quaternion.Euler(0,0,0);
         isDieing = false;
