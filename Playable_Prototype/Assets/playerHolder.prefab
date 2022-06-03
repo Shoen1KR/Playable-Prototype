@@ -45,6 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27dbb950c3af3ea4a9b8947ff3678839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerObj: {fileID: 4811721009684900890}
+  spawnManager: {fileID: 0}
+  target: {fileID: 7725574600699000257}
+  timeToMoveAgain: 3
+  timeToDie: 15
+  isDieing: 0
 --- !u!1 &7725574600699000286
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +150,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f59dd2300c92b34db444cb60da855fa, type: 3}
+--- !u!1 &4811721009684900890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3022033999222109541, guid: 4f59dd2300c92b34db444cb60da855fa, type: 3}
+  m_PrefabInstance: {fileID: 7725574600863783295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4811721009684900882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3022033999222109549, guid: 4f59dd2300c92b34db444cb60da855fa, type: 3}
