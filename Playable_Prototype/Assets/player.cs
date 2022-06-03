@@ -69,8 +69,10 @@ public class player : MonoBehaviour
 
         playerObj.transform.rotation = Quaternion.Euler(0,0,0);
         isDieing = false;
-        spawnManager.Spawn(playerObj);
         playerObj.GetComponent<AIPath>().canMove = true;
+        spawnManager.Spawn(playerObj);
+        playerObj.GetComponent<AIPath>().Teleport(playerObj.transform.position);
+
         yield return new WaitForEndOfFrame();
     }
 }
