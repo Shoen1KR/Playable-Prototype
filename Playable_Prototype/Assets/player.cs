@@ -62,17 +62,18 @@ public class player : MonoBehaviour
         playerObj.GetComponent<MeshRenderer>().material.DOColor(Color.black,0.5f);
         playerObj.GetComponent<AIPath>().canMove = false;
         yield return myTween.WaitForCompletion();
-        yield return new WaitForSeconds(3.0f);
-
+        playerObj.GetComponent<AIPath>().canMove = true;
+        Vector3 position = spawnManager.Spawn(playerObj);
+        playerObj.GetComponent<AIPath>().Teleport(position);
+        playerObj.transform.position = position;
+        yield return new WaitForEndOfFrame();
+        playerObj.transform.position = position;
+        yield return new WaitForEndOfFrame();
+        playerObj.transform.position = position;
+        yield return new WaitForEndOfFrame();
+        playerObj.transform.position = position;
         playerObj.transform.localScale = Vector3.one *0.5f;
         playerObj.GetComponent<MeshRenderer>().material.color = OGColor;
-
-        playerObj.transform.rotation = Quaternion.Euler(0,0,0);
         isDieing = false;
-        playerObj.GetComponent<AIPath>().canMove = true;
-        spawnManager.Spawn(playerObj);
-        playerObj.GetComponent<AIPath>().Teleport(playerObj.transform.position);
-
-        yield return new WaitForEndOfFrame();
     }
 }

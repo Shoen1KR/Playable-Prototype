@@ -14,7 +14,8 @@ public class DistanceSpawning : MonoBehaviour
         spawns = GameObject.FindGameObjectsWithTag("SpawnPoint");
         foreach (var player in players)
         {
-            Spawn(player);
+            Vector3 pos = Spawn(player);
+            player.transform.position = pos;
         }
     }
 
@@ -32,8 +33,6 @@ public class DistanceSpawning : MonoBehaviour
 
     public Vector3 Spawn(GameObject player)
     {
-        Debug.Log("-1-12-12-12-12-12-12-12-");
-        Debug.Log(player.transform.position);
         List<GameObject> filtered = new List<GameObject>(spawns);
         foreach(GameObject spawn in spawns)
         {
@@ -48,6 +47,5 @@ public class DistanceSpawning : MonoBehaviour
         }
 
         return filtered[Random.Range(0, filtered.Count)].transform.position;
-        Debug.Log(player.transform.position);
     }
 }
