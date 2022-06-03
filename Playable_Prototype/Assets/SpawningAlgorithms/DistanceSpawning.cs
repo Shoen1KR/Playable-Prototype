@@ -32,12 +32,14 @@ public class DistanceSpawning : MonoBehaviour
 
     public void Spawn(GameObject player)
     {
+        Debug.Log("-1-12-12-12-12-12-12-12-");
+        Debug.Log(player.transform.position);
         List<GameObject> filtered = new List<GameObject>(spawns);
         foreach(GameObject spawn in spawns)
         {
             foreach(GameObject p in players)
             {
-                if(Vector3.Distance(spawn.transform.position, p.transform.position) > distance)
+                if(Vector3.Distance(spawn.transform.position, p.transform.position) < distance)
                 {
                     filtered.Remove(spawn);
                     break;
@@ -46,5 +48,6 @@ public class DistanceSpawning : MonoBehaviour
         }
 
         player.transform.position = filtered[Random.Range(0, filtered.Count)].transform.position;
+        Debug.Log(player.transform.position);
     }
 }

@@ -7,7 +7,7 @@ using DG.Tweening;
 public class player : MonoBehaviour
 {
     [SerializeField] GameObject playerObj;
-    [SerializeField] Spawning spawnManager;
+    [SerializeField] DistanceSpawning spawnManager;
     [SerializeField] Transform target;
     [SerializeField] float timeToMoveAgain;
     [SerializeField] float timeToDie;
@@ -52,7 +52,7 @@ public class player : MonoBehaviour
     void die()
     {
         //sink into the ground then once done spawn anew
-        target.transform.position = playerObj.transform.position;
+        //target.transform.position = playerObj.transform.position;
         StartCoroutine(dieing());
     }
     IEnumerator dieing()
@@ -60,17 +60,17 @@ public class player : MonoBehaviour
         Color OGColor = playerObj.GetComponent<MeshRenderer>().material.color;
         Tween myTween = playerObj.transform.DOScale(Vector3.zero, 1).SetEase(Ease.OutQuad);
         playerObj.GetComponent<MeshRenderer>().material.DOColor(Color.black,0.5f);
-        playerObj.GetComponent<Collider>().enabled = false;
-        playerObj.GetComponent<AIPath>().enabled = false;
+        playerObj.GetComponent<AIPath>().canMove = false;
         yield return myTween.WaitForCompletion();
+        yield return new WaitForSeconds(3.0f);
+
         playerObj.transform.localScale = Vector3.one *0.5f;
-        playerObj.GetComponent<Collider>().enabled = true;
-        playerObj.GetComponent<AIPath>().enabled = true;
         playerObj.GetComponent<MeshRenderer>().material.color = OGColor;
 
         playerObj.transform.rotation = Quaternion.Euler(0,0,0);
         isDieing = false;
         spawnManager.Spawn(playerObj);
+        playerObj.GetComponent<AIPath>().canMove = true;
         yield return new WaitForEndOfFrame();
     }
 }
