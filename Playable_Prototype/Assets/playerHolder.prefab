@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8001701763894431514}
   m_Layer: 0
-  m_Name: enemyHolder
+  m_Name: playerHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955852360172275022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.92539, y: -24.32312, z: -0.9739552}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4811721009684900882}
@@ -75,7 +75,7 @@ PrefabInstance:
       objectReference: {fileID: 7725574600699000257}
     - target: {fileID: 3022033999222109541, guid: 4f59dd2300c92b34db444cb60da855fa, type: 3}
       propertyPath: m_Name
-      value: Enemy1
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 3022033999222109547, guid: 4f59dd2300c92b34db444cb60da855fa, type: 3}
       propertyPath: height
