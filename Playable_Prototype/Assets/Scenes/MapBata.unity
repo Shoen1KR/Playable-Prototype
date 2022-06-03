@@ -11837,8 +11837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dafb3100320f9044a0127c2829459ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  spawns: []
 --- !u!4 &665309722
 Transform:
   m_ObjectHideFlags: 0
@@ -11865,8 +11863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9dd32a8d35de34cb9920e80a8daae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  spawns: []
   distance: 5
 --- !u!114 &665309724
 MonoBehaviour:
@@ -11880,9 +11876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25652da9b69f24e4abe5980f107e8088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  spawns: []
-  distance: 0
+  distance: 5
 --- !u!1 &670378991
 GameObject:
   m_ObjectHideFlags: 0

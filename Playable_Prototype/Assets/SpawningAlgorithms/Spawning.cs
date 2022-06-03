@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Spawning : MonoBehaviour
 {
-    public GameObject[] players;
-    public GameObject[] spawns;
+    private GameObject[] players;
+    private GameObject[] spawns;
 
     void Awake()
     {

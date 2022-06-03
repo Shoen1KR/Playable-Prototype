@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LOSSpawning : MonoBehaviour
 {
-    public GameObject[] players;
-    public GameObject[] spawns;
+    private GameObject[] players;
+    private GameObject[] spawns;
     public int distance;
 
     void Awake()
@@ -32,24 +32,21 @@ public class LOSSpawning : MonoBehaviour
 
     public Vector3 Spawn(GameObject player)
     {
-        Debug.Log("-1-12-12-12-12-12-12-12-");
-        Debug.Log(player.transform.position);
         List<GameObject> filtered = new List<GameObject>(spawns);
         foreach(GameObject spawn in spawns)
         {
             foreach(GameObject p in players)
             {
-                //if(Vector3.Distance(spawn.transform.position, p.transform.position) < distance)
-                Vector3 view = p.GetComponent<Camera>().WorldToViewportPoint(spawn.transform.position);
-                if (view.x >= 0 && view.x <= 1 && view.y >= 0 && view.y <= 1 && view.z > 0)
+                Vector3 view = p.transform.GetChild(0).GetComponent<Camera>().WorldToViewportPoint(spawn.transform.position);
+                if(Vector3.Distance(spawn.transform.position, p.transform.position) < distance || view.x >= 0 && view.x <= 1 && view.y >= 0 && view.y <= 1 && view.z > 0)
                 {
                     filtered.Remove(spawn);
+                    Debug.Log("removed");
                     break;
                 }
             }
         }
 
         return filtered[Random.Range(0, filtered.Count)].transform.position;
-        Debug.Log(player.transform.position);
     }
 }

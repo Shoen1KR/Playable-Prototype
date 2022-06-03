@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DistanceSpawning : MonoBehaviour
 {
-    public GameObject[] players;
-    public GameObject[] spawns;
+    private GameObject[] players;
+    private GameObject[] spawns;
     public int distance;
 
     void Awake()
