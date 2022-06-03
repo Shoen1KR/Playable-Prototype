@@ -11817,6 +11817,7 @@ GameObject:
   - component: {fileID: 665309722}
   - component: {fileID: 665309721}
   - component: {fileID: 665309723}
+  - component: {fileID: 665309724}
   m_Layer: 0
   m_Name: spawningManager
   m_TagString: Untagged
@@ -11859,7 +11860,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665309720}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e9dd32a8d35de34cb9920e80a8daae7, type: 3}
   m_Name: 
@@ -11867,6 +11868,21 @@ MonoBehaviour:
   players: []
   spawns: []
   distance: 5
+--- !u!114 &665309724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665309720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25652da9b69f24e4abe5980f107e8088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: []
+  spawns: []
+  distance: 0
 --- !u!1 &670378991
 GameObject:
   m_ObjectHideFlags: 0

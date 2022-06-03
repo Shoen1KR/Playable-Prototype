@@ -29,9 +29,9 @@ public class Spawning : MonoBehaviour
         
     }
 
-    public void Spawn(GameObject player)
+    public Vector3 Spawn(GameObject player)
     {
         int spawn = Random.Range(0, spawns.Length);
-        player.transform.position = spawns[spawn].transform.position;
+        return spawns[spawn].transform.position;
     }
 }
